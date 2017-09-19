@@ -26,52 +26,55 @@
 		    	<%= image_tag "brand-white.png" %>
 		  	</a>
 
-		  	<div class="collapse f" id="navbarResponsive">
-		    	<ul class="navbar-nav ain">
-		      		<li class="qx active">
-		        		<a class="qv" href="<%= root_url %>">Home <span class="aet">(current)</span></a>
-		      		</li>
-		      		<li class="qx">
-		        		<a class="qv" href="#">Profile</a>
-		      		</li>
-		      		<li class="qx">
-		        		<a class="qv" data-toggle="modal" href="#msgModal">Messages</a>
-		      		</li>
+		  	<% if user_signed_in? %>
+			  	<div class="collapse f" id="navbarResponsive">
+			    	<ul class="navbar-nav ain">
+			      		<li class="qx active">
+			        		<a class="qv" href="<%= root_url %>">Home <span class="aet">(current)</span></a>
+			      		</li>
+			      		
+			      		<li class="qx">
+			        		<a class="qv" href="#">Profile</a>
+			      		</li>
+			      		<li class="qx">
+			        		<a class="qv" data-toggle="modal" href="#msgModal">Messages</a>
+			      		</li>
 
-		      		<li class="qx ayd">
-		        		<a class="qv" href="#">Notifications</a>
-		      		</li>
-		      		<li class="qx ayd">
-		        		<a class="qv" data-action="growl">Growl</a>
-		      		</li>
-		      		<li class="qx ayd">
-		        		<a class="qv" href="#">Logout</a>
-		      		</li>
-		    	</ul>
+			      		<li class="qx ayd">
+			        		<a class="qv" href="#">Notifications</a>
+			      		</li>
+			      		<li class="qx ayd">
+			        		<a class="qv" data-action="growl">Growl</a>
+			      		</li>
+			      		<li class="qx ayd">
+			        		<a class="qv" href="#">Logout</a>
+			      		</li>
+			    	</ul>
+			    	<form class="pf aec ayc">
+			      		<input class="form-control" type="text" data-action="grow" placeholder="Search">
+	    			</form>
 
-		    	<form class="pf aec ayc">
-		      		<input class="form-control" type="text" data-action="grow" placeholder="Search">
-    			</form>
+			    	<ul id="#js-popoverContent" class="nav navbar-nav aec afh ayc">
+			      		<li class="qx">
+			        		<a class="g qv" href="#">
+			          			<span class="h bbf"></span>
+			        		</a>
+			      		</li>
+			      		<li class="qx afx">
+			        		<button class="cg bqv bqw bpq" data-toggle="popover">
+			          			<%= image_tag "avatar-dhg.png", class: "wg" %>
+			        		</button>
+			      		</li>
+			    	</ul>
 
-		    	<ul id="#js-popoverContent" class="nav navbar-nav aec afh ayc">
-		      		<li class="qx">
-		        		<a class="g qv" href="#">
-		          			<span class="h bbf"></span>
-		        		</a>
-		      		</li>
-		      		<li class="qx afx">
-		        		<button class="cg bqv bqw bpq" data-toggle="popover">
-		          			<%= image_tag "avatar-dhg.png", class: "wg" %>
-		        		</button>
-		      		</li>
-		    	</ul>
-
-	    		<ul class="nav navbar-nav hidden-xs-up" id="js-popoverContent">
-		      		<li class="qx"><a class="qv" href="#" data-action="growl">Growl</a></li>
-		      		<li class="qx"><a class="qv" href="#">Logout</a></li>
-	    		</ul>
-		  	</div>
+		    		<ul class="nav navbar-nav hidden-xs-up" id="js-popoverContent">
+			      		<li class="qx"><a class="qv" href="#" data-action="growl">Growl</a></li>
+			      		<li class="qx"><a class="qv" href="#">Logout</a></li>
+		    		</ul>
+			  	</div>
+		  	<% end %>
 		</nav>
+		
 		<% if notice.present? %>
   			<section class="alert alert-info">
   				<%= notice %>
