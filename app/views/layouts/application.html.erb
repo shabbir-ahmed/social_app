@@ -22,14 +22,14 @@
 		    	<span class="rf"></span>
 		  	</button>
 
-		  	<a class="e" href="#">
-		    	<img src="assets/img/brand-white.png" alt="brand">
+		  	<a class="e" href="<%= root_url %>">
+		    	<%= image_tag "brand-white.png" %>
 		  	</a>
 
 		  	<div class="collapse f" id="navbarResponsive">
 		    	<ul class="navbar-nav ain">
 		      		<li class="qx active">
-		        		<a class="qv" href="#">Home <span class="aet">(current)</span></a>
+		        		<a class="qv" href="<%= root_url %>">Home <span class="aet">(current)</span></a>
 		      		</li>
 		      		<li class="qx">
 		        		<a class="qv" href="#">Profile</a>
@@ -72,7 +72,18 @@
 	    		</ul>
 		  	</div>
 		</nav>
+		<% if notice.present? %>
+  			<section class="alert alert-info">
+  				<%= notice %>
+  			</section>
+  		<% end %>
 
+  		<% if alert.present? %>
+  			<section class="alert alert-danger">
+  				<%= alert %>
+  			</section>
+  		<% end %>
+  		
     	<%= yield %>
   	</body>
 </html>
