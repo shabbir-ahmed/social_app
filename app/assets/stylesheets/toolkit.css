@@ -2786,7 +2786,7 @@ tbody.collapse.show {
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  /*display: flex;*/
   padding-left: 0;
   margin-bottom: 0;
   list-style: none; }
