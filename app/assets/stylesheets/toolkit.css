@@ -6895,8 +6895,11 @@ textarea {
 
 @font-face {
   font-family: "toolkit-entypo";
-  src: url("/public/assets/fonts/toolkit-entypo.eot");
-  src: url("/public/assets/fonts/toolkit-entypo.eot?#iefix") format("eot"), url("/public/assets/fonts/toolkit-entypo.woff2") format("woff2"), url("/public/assets/fonts/toolkit-entypo.woff") format("woff"), url("/public/assets/fonts/toolkit-entypo.ttf") format("truetype");
+  src:  url("/assets/toolkit-entypo.eot");
+  src:  url("/assets/toolkit-entypo.eot?#iefix") format("embedded-opentype"), 
+        url("/assets/toolkit-entypo.woff2") format("woff2"), 
+        url("/assets/toolkit-entypo.woff") format("woff"), 
+        url("/assets/toolkit-entypo.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
